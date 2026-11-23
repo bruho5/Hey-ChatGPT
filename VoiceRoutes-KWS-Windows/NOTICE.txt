@@ -1,0 +1,9 @@
+Sherpa-ONNX runtime code: https://github.com/k2-fsa/sherpa-onnx
+Sherpa-ONNX source license: https://github.com/k2-fsa/sherpa-onnx/blob/master/LICENSE
+The model and optional English pronunciation lexicon are not distributed in this package.
+One-time setup downloads the pinned official artifact and verifies its SHA-256:
+https://github.com/k2-fsa/sherpa-onnx/releases/download/kws-models/sherpa-onnx-kws-zipformer-zh-en-3M-2025-12-20.tar.bz2
+Model upstream: https://www.modelscope.cn/models/pkufool/icefall-kws-zipformer-zh-en-3M-2025-12-20
+Model license discussion and maintainer statement: https://github.com/k2-fsa/sherpa-onnx/issues/3802
+The GitHub model release does not ship a separate lexicon license; this app does not rehost the lexicon.
+Setup also fetches pinned Windows wheels from PyPI; each wheel contains its upstream license notices.

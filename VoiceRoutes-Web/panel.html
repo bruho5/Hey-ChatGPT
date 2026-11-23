@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="panel.css"><link rel="stylesheet" href="dark.css"><script type="module" src="panel.js"></script>
+<title>Hey, ChatGPT</title>
+</head><body><div class="wrap">
+<header><div class="brand"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h3l2-5 3 10 3-14 3 10 2-3h2"/></svg>Hey, ChatGPT</div>
+<div class="tools"><span class="badge" id="bridge-badge">未连接</span><button type="button" class="iconbtn" id="open-settings" title="设置" aria-label="设置" data-i18n-title="设置" data-i18n-aria-label="设置"><svg width="17" height="17" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="#fffefa"/><circle cx="15" cy="12" r="2" fill="#fffefa"/><circle cx="10" cy="17" r="2" fill="#fffefa"/></svg></button></div></header>
+<main>
+<div class="hero"><h1>Hey, ChatGPT</h1><p data-i18n="说出会话口令，不用切窗口。">说出会话口令，不用切窗口。</p></div>
+<section class="monitor" id="monitor" data-state="idle" aria-labelledby="state">
+<div class="mic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11v1a7 7 0 0 0 14 0v-1M12 19v3m-3 0h6"/></svg></div>
+<div role="status" aria-live="polite"><h2 id="state">等待连接</h2><p id="wake-status">请打开 Windows 托盘应用。</p></div>
+<button class="primary" type="button" id="main-action">检查连接</button>
+</section>
+<p id="official-status"></p>
+<section class="command" aria-labelledby="routes-title"><h2 id="routes-title" data-i18n="口令">口令</h2>
+<div class="list" id="route-list"></div>
+</section>
+<div class="foot"><span data-i18n="口令在本机识别 · 会话正文由 ChatGPT 听写">口令在本机识别 · 会话正文由 ChatGPT 听写</span></div>
+</main></div>
+<dialog id="settings" aria-labelledby="settings-title">
+<header><h2 id="settings-title" data-i18n="设置">设置</h2><button class="iconbtn" id="close-settings" type="button" aria-label="关闭设置" data-i18n-aria-label="关闭设置">×</button></header>
+<div class="group appearance"><h3 data-i18n="外观">外观</h3>
+<div class="appearance-options">
+<label><span data-i18n="界面语言">界面语言</span><select id="ui-language"><option value="zh">简体中文</option><option value="en">English</option></select></label>
+<label><span data-i18n="主题">主题</span><select id="ui-theme"><option value="light" data-i18n="浅色">浅色</option><option value="dark" data-i18n="暗色">暗色</option></select></label>
+</div>
+</div>
+<div class="group"><h3 data-i18n="Windows 助手">Windows 助手</h3>
+<p data-i18n="由桌面应用连接。关闭这个扩展页不会停止监听。">由桌面应用连接。关闭这个扩展页不会停止监听。</p>
+<button class="subtle" id="wake-connect" type="button" data-i18n="检查连接">检查连接</button>
+<p id="wake-audio"></p><p id="settings-status" role="status" aria-live="polite"></p></div>
+<div class="group"><h3 data-i18n="会话与口令">会话与口令</h3><p id="routes-help" data-i18n="填入现有会话的地址。没有开着时会在后台打开，听见提示音后再说正文。">填入现有会话的地址。没有开着时会在后台打开，听见提示音后再说正文。</p>
+<p data-i18n="口令可中英混搭，例如「Hey 莫」或「莫 open 写作」。只识别词典里有的英文读音。">口令可中英混搭，例如「Hey 莫」或「莫 open 写作」。只识别词典里有的英文读音。</p>
+<div id="routes"></div><button id="add" class="subtle" type="button" data-i18n="＋ 添加会话">＋ 添加会话</button>
+<label for="wake-send-phrase" data-i18n="发送口令">发送口令</label><input id="wake-send-phrase" value="ChatGPT发送" type="text" maxlength="80">
+<label><input id="wake-auto-send" type="checkbox"> <span data-i18n="单段听写后自动发送">单段听写后自动发送</span></label>
+<p data-i18n="默认关闭。续录、已有草稿和手动收段不会自动发。">默认关闭。续录、已有草稿和手动收段不会自动发。</p>
+<div class="dialog-foot"><button class="primary" id="save" type="button" data-i18n="保存设置">保存设置</button></div></div>
+</dialog>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'">
+<title>Hey, ChatGPT</title>
+<link rel="stylesheet" href="/app.css">
+<script src="/app.js" defer></script>
+</head>
+<body>
+<main>
+  <div class="topline">
+    <p class="eyebrow" data-label="eyebrow">WINDOWS · 语音助手</p>
+    <label class="language"><span data-label="language">语言</span>
+      <select id="language" disabled>
+        <option lang="zh-CN" value="zh">简体中文</option>
+        <option lang="en" value="en">English</option>
+      </select>
+    </label>
+  </div>
+  <h1>Hey, ChatGPT</h1>
+  <p class="subtitle" data-label="subtitle">用口令唤醒你保存的 ChatGPT 会话。</p>
+  <section id="status-region" aria-label="助手状态">
+    <span class="badge" id="badge">连接中</span>
+    <p id="status" role="status">正在读取本机状态…</p>
+    <p id="chrome"></p>
+  </section>
+  <label for="folder" data-label="folderLabel">原唤醒助手的文件夹</label>
+  <div class="row">
+    <input id="folder" readonly placeholder="选择含 .venv、probe.py 和 model 的文件夹">
+    <button id="choose" type="button" data-label="browse" disabled>浏览</button>
+  </div>
+  <p class="hint" data-label="hint">不会修改这个文件夹。Chrome 里的扩展负责会话和口令设置；设置好以后可以关闭扩展页。</p>
+  <p id="error" role="alert" hidden></p>
+  <button class="main" id="listen" type="button" disabled>开始监听</button>
+  <p class="foot" data-label="foot">关闭此窗会隐藏到托盘。可在托盘暂停监听或完全退出。</p>
+</main>
+</body>
+</html>

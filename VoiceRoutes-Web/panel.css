@@ -1,0 +1,73 @@
+
+:root{color-scheme:light;--bg:#faf9f5;--ink:#141413;--muted:#666258;--line:#e8e6dc;--clay:#d97757;--rust:#824c3b;--card:#fffefa;--sage:#788c5d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 "Lora","Georgia","Songti SC","SimSun",serif}
+h1,h2,p{margin:0}button,input{font:inherit}button{cursor:pointer;color:inherit}button:disabled{cursor:not-allowed;opacity:.44}
+:where(button,input,summary):focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.wrap{width:min(650px,calc(100% - 36px));margin:auto}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font:13px system-ui,sans-serif}
+.brand,.tools{display:flex;align-items:center;gap:10px}.brand{font-weight:660}.brand svg{color:var(--rust);width:22px;height:22px}
+.badge{font:11px system-ui,sans-serif;color:#605d52;background:#edeae1;border-radius:6px;padding:4px 7px;letter-spacing:.02em}
+.iconbtn{display:grid;place-items:center;border:1px solid var(--line);border-radius:8px;background:var(--card);width:34px;height:34px}
+.iconbtn:hover,.subtle:hover,.route:hover{background:#f1eee5}
+svg{stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.hero{padding:51px 0 25px}
+h1{font:600 clamp(39px,8vw,61px)/1.04 "Poppins",Arial,sans-serif;letter-spacing:-.055em}
+.hero p{font-size:15px;color:var(--muted);margin-top:13px}
+.monitor{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:15px;padding:17px;background:var(--card);border:1px solid var(--line);border-radius:13px}
+.mic{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;background:#f4e7de;color:#8e4935}
+.monitor[data-state=recording] .mic{background:#f7dbc9;outline:3px solid #f5ece0}
+.monitor[data-state=ready] .mic,.monitor[data-state=sent] .mic{background:#ebeddf;color:#576449}
+.monitor h2{font:660 16px/1.3 system-ui,sans-serif}
+.monitor p{font-size:12px;color:var(--muted);margin-top:3px}
+.primary,.subtle{border-radius:8px;padding:8px 13px;white-space:nowrap;font:650 12px/1.4 system-ui,sans-serif}
+.primary{background:#9d513c;border:1px solid #9d513c;color:#fff9f2}
+.primary:hover{background:#83432f}
+.subtle{border:1px solid var(--line);background:var(--card)}
+section.command{margin-top:27px}
+section.command h2,section.draft h2{font:670 14px system-ui,sans-serif}
+.list{margin-top:9px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.route{border:0;background:transparent;width:100%;display:grid;grid-template-columns:23px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;padding:11px 13px;min-height:46px}
+.route+.route{border-top:1px solid var(--line)}
+.route .type{color:var(--muted);font:11px system-ui,sans-serif;white-space:nowrap}
+.route .name{overflow-wrap:anywhere;line-height:1.4}
+.route[data-current=true]{background:#f5eee6}.route[data-current=true] .ri{color:#a25741}
+.ri{color:var(--muted)}.sendrow{border-top:1px solid var(--line);display:grid;grid-template-columns:23px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 13px}
+.foot{display:flex;justify-content:space-between;gap:10px;margin:18px 0 30px;color:var(--muted);font:11px system-ui,sans-serif}
+.box{border:1px solid var(--line);background:#f5f2e9;padding:13px;border-radius:9px;margin-top:10px;white-space:pre-wrap}
+.draft{margin-top:22px}
+dialog{width:min(440px,calc(100% - 28px));padding:22px;background:var(--bg);border:1px solid #dcd9cb;border-radius:12px;color:var(--ink)}
+dialog::backdrop{background:#29261d40}
+dialog h2{font:650 19px "Poppins",Arial,sans-serif}
+dialog label{display:block;margin-top:12px;font-size:13px}
+dialog input[type=text],dialog input[type=password]{display:block;width:100%;padding:8px;margin-top:4px;border:1px solid #d9d5c7;background:#fffefa;border-radius:6px}
+dialog p{color:var(--muted);font-size:12px;margin-top:7px}
+.dialog-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+input[type=checkbox]{accent-color:#a25741}
+[hidden]{display:none!important}
+@media(max-width:480px){header{height:55px}.hero{padding:35px 0 18px}.hero p{font-size:14px;margin-top:9px}.monitor{grid-template-columns:44px 1fr;gap:8px 11px;padding:13px}.monitor .primary{grid-column:2;justify-self:start}.mic{width:42px;height:42px}.sendrow .subtle{font-size:11px;padding:7px 8px}.route,.sendrow{grid-template-columns:18px minmax(0,1fr) auto;gap:8px;padding-left:10px;padding-right:10px}}
+
+button{font-family:system-ui,sans-serif}
+.settings-route{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;border:1px solid var(--line);padding:10px;margin-top:8px;border-radius:8px}
+.settings-route label{margin:0}.settings-route label:last-of-type{grid-column:1/-1}
+.settings-route button{align-self:center}
+.settings-route input,.settings-route select{font:13px system-ui,sans-serif}
+.group{border-top:1px solid var(--line);padding-top:13px;margin-top:15px}
+.group h3{font:650 13px system-ui,sans-serif;margin:0 0 9px}
+dialog{max-height:calc(100vh - 28px);overflow:auto}
+dialog header{height:auto;border:0;margin-bottom:10px;align-items:flex-start}
+#routes-help{margin:4px 0 10px}
+#settings-status{min-height:1.5em}
+.line-icon{color:var(--rust)}
+#official-status:empty,#wake-audio:empty{display:none}
+#route-list .route{cursor:default}
+#route-list .route:not([data-current=true]):hover{background:none}
+#route-list .route .type{font-size:11px}
+#official-status{margin:5px 3px 0;color:var(--muted);font-size:12px}
+#home-status{overflow-wrap:anywhere}
+#wake-audio{margin:3px 0;color:var(--muted);font-size:11px}
+#settings #wake-connect{margin-top:8px}
+
+.appearance-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.appearance-options label{margin:0}
+.appearance-options select{display:block;width:100%;margin-top:4px;padding:7px 9px;border:1px solid #d9d5c7;background:var(--card);color:var(--ink);border-radius:6px;font:13px system-ui,sans-serif}
+.appearance-options select:focus-visible{outline:2px solid var(--clay);outline-offset:3px}

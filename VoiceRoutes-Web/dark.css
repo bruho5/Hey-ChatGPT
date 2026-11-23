@@ -1,0 +1,120 @@
+/* Same layout and type as the light panel, with warm rather than blue grays. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #201d1a;
+  --ink: #f4ece2;
+  --muted: #c2b4a6;
+  --line: #544943;
+  --clay: #efa98f;
+  --rust: #e6a28b;
+  --card: #2a2521;
+  --sage: #d0dda9;
+  --dark-hover: #37302a;
+  --dark-selected: #463329;
+  --dark-input: #211d1a;
+  --dark-input-line: #8b7769;
+  --dark-primary: #d9957e;
+  --dark-primary-hover: #eda991;
+  --dark-primary-active: #ce8b75;
+  --dark-primary-ink: #261b16;
+}
+
+:root[data-theme="dark"] .badge {
+  background: #38312b;
+  color: #ddd0c3;
+}
+:root[data-theme="dark"] .iconbtn,
+:root[data-theme="dark"] .subtle {
+  border-color: var(--dark-input-line);
+}
+:root[data-theme="dark"] .iconbtn:hover,
+:root[data-theme="dark"] .subtle:hover,
+:root[data-theme="dark"] .route:hover {
+  background: var(--dark-hover);
+}
+:root[data-theme="dark"] #route-list .route:hover {
+  background: transparent;
+}
+/* The settings sliders have a baked-in light SVG fill in the shared markup. */
+:root[data-theme="dark"] #open-settings svg circle {
+  fill: var(--card);
+}
+:root[data-theme="dark"] #open-settings:hover svg circle {
+  fill: var(--dark-hover);
+}
+
+:root[data-theme="dark"] .mic {
+  background: #433129;
+  color: var(--rust);
+}
+:root[data-theme="dark"] .monitor:is([data-state="ready"], [data-state="sent"]) .mic {
+  background: #354030;
+  color: var(--sage);
+}
+:root[data-theme="dark"] .monitor:is([data-state="recording"]) .mic {
+  background: #532e27;
+  color: #f4b7a3;
+  outline: 3px solid #715044;
+}
+:root[data-theme="dark"] .monitor:is([data-state="connecting"], [data-state="starting"], [data-state="stopping"], [data-state="sending"]) .mic {
+  background: #453729;
+  color: #f1cf9c;
+}
+:root[data-theme="dark"] .monitor:is([data-state="offline"]) .mic {
+  background: #472e2a;
+  color: #ffbbae;
+}
+
+:root[data-theme="dark"] .primary {
+  border-color: var(--dark-primary);
+  background: var(--dark-primary);
+  color: var(--dark-primary-ink);
+}
+:root[data-theme="dark"] .primary:not(:disabled):hover {
+  background: var(--dark-primary-hover);
+  border-color: var(--dark-primary-hover);
+}
+:root[data-theme="dark"] .primary:not(:disabled):active {
+  background: var(--dark-primary-active);
+  border-color: var(--dark-primary-active);
+}
+:root[data-theme="dark"] button:disabled {
+  opacity: .62;
+}
+:root[data-theme="dark"] .route:is([aria-pressed="true"], [data-current="true"]),
+:root[data-theme="dark"] #route-list .route:is([aria-pressed="true"], [data-current="true"]):hover {
+  background: var(--dark-selected);
+}
+:root[data-theme="dark"] .route:is([aria-pressed="true"], [data-current="true"]) .ri {
+  color: var(--rust);
+}
+
+:root[data-theme="dark"] dialog {
+  background: #27221e;
+  border-color: #75655a;
+}
+:root[data-theme="dark"] dialog::backdrop {
+  background: rgba(15, 12, 10, .72);
+}
+:root[data-theme="dark"] dialog input:not([type="checkbox"]):not([type="radio"]),
+:root[data-theme="dark"] dialog select,
+:root[data-theme="dark"] dialog textarea {
+  color: var(--ink);
+  background: var(--dark-input);
+  border-color: var(--dark-input-line);
+}
+:root[data-theme="dark"] dialog :is(input, textarea)::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+:root[data-theme="dark"] :is(input[type="checkbox"], input[type="radio"]) {
+  accent-color: var(--dark-primary);
+}
+:root[data-theme="dark"] :where(button, input, textarea, select, summary, a):focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+}
+:root[data-theme="dark"] .list .route:focus-visible {
+  /* The route list clips its edges, so keep the keyboard ring inside it. */
+  outline-offset: -3px;
+}

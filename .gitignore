@@ -1,0 +1,11 @@
+desktop/out/
+setup/Chrome-Link.exe
+VoiceRoutes-KWS-Windows/.venv/
+VoiceRoutes-KWS-Windows/model/
+VoiceRoutes-KWS-Windows/wheels/
+VoiceRoutes-Bridge/en.phone
+*.exe
+*.zip
+*.tmp
+__pycache__/
+*.pyc
